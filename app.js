@@ -20,6 +20,14 @@ const app = Vue.createApp({
       this.playerHealth = this.playerHealth - attackValue;
     },
   },
+  computed: {
+    monsterBarStyle() {
+      return { width: this.monsterHealth + "%" };
+    },
+    playerBarStyle() {
+      return { width: this.playerHealth + "%" };
+    },
+  },
 });
 
 app.mount("#game");
