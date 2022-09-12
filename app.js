@@ -41,12 +41,24 @@ const app = Vue.createApp({
       }
       this.attackPlayer();
     },
+    startGame() {
+      this.playerHealth = 100;
+      this.monsterHealth = 100;
+      this.currentRound = 0;
+      this.winner = null;
+    },
   },
   computed: {
     monsterBarStyle() {
+      if (this.monsterHealth < 0) {
+        return { width: "0%" };
+      }
       return { width: this.monsterHealth + "%" };
     },
     playerBarStyle() {
+      if (this.playerHealth < 0) {
+        return { width: "0%" };
+      }
       return { width: this.playerHealth + "%" };
     },
     mayUseSpecialAttack() {
