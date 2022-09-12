@@ -47,6 +47,9 @@ const app = Vue.createApp({
       this.currentRound = 0;
       this.winner = null;
     },
+    surrender() {
+      this.winner = "monster";
+    },
   },
   computed: {
     monsterBarStyle() {
